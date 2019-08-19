@@ -178,7 +178,6 @@ def sync_endpoint(client, #pylint: disable=too-many-branches
             transformed_data = transform_json(data, stream_name)[data_key]
         # LOGGER.info('transformed_data = {}'.format(transformed_data))  # TESTING, comment out
         if not transformed_data or transformed_data is None:
-            LOGGER.info('BREAK TRANSFORMED DATA')
             break # No data results
 
         # Process records and get the max_bookmark_value and record_count for the set of records
