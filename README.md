@@ -36,10 +36,12 @@ This tap:
 - Primary key field: content_reference
 - Foreign keys: account_id (accounts), owner_organization_id (organizations)
 - Replication strategy: Incremental (query all, filter results)
-  - Filter: account (from parent account) and owner (from parent account or organization default)
+  - Filter: account (from parent account) and owner (from parent account) (see NOTE below)
   - Bookmark: last_modified_time (date-time)
 - Transformations: Fields camelCase to snake_case. URNs to ids. Unix epoch millisecond integers to date-times. Audit date-times created_at and last_modified_at de-nested.
 - Parent: account
+**NOTE**: The parent Account **MUST** reference and **Organization** (not a Person)
+- [Campaign Manager User Roles for Video Ads](https://www.linkedin.com/help/lms/answer/90733/campaign-manager-user-roles-for-video-ads?lang=en)
 
 [**account_users**](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users#find-ad-account-users-by-accounts)
 - Endpoint: https://api.linkedin.com/v2/adAccountUsersV2
